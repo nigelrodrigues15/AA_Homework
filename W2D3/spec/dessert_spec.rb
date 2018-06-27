@@ -6,16 +6,26 @@ Instructions: implement all of the pending specs (the `it` statements without bl
 =end
 
 describe Dessert do
+  subject(:dessert) { Dessert.new("dessert", 2, "baker")}
   let(:chef) { double("chef") }
 
   describe "#initialize" do
-    it "sets a type"
+    it "sets a type" do
+      expect(dessert.type).to eq("dessert")
+    end
 
-    it "sets a quantity"
+    it "sets a quantity" do
+      expect(dessert.quantity).to eq(2)
+    end
 
-    it "starts ingredients as an empty array"
+    it "starts ingredients as an empty array" do
+      expect(dessert.ingredients).to eq([])
+    end
 
-    it "raises an argument error when given a non-integer quantity"
+    it "raises an argument error when given a non-integer quantity" do
+      expect{Dessert.new("dessert", "two"", "baker")}.to raise_error(ArgumentError)
+    end
+
   end
 
   describe "#add_ingredient" do
