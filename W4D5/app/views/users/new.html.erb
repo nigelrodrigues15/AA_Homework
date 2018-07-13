@@ -1,0 +1,17 @@
+
+<div>
+  <form action="<%= users_url %>" method="post">
+    <%= auth_token %>
+    <h1>Sign up</h1>
+    <label>Email</label>
+    <input type="text" name="users[email]" value="<%= @user.email %>">
+    <label>Password</label>
+    <input type="password" name="users[password]" value="<%= @user.password %>">
+    <br><br>
+    <input type="submit" value="Sign Up">
+    
+    <br><br>
+  </form>
+  
+  <%= button_to "Log in", new_session_url, method: :get %>
+</div>

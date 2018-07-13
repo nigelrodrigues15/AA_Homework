@@ -1,0 +1,19 @@
+<div >
+  
+
+<h1>Hello, <%= @user.email.capitalize %></h1> <br>
+
+<form action="<%= users_url %>" method="post">
+  <%= auth_token %>
+  
+  <label><b>Email</b></label> <%= @user.email %>@gmail.com
+  
+</form>
+<br>
+<!-- <%#= link_to 'Edit', edit_user_path(@user) %> | -->
+<form action="<%= session_url %>" method="post">
+    <%= auth_token %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Log out">
+</form>
+</div>
